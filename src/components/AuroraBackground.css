@@ -1,0 +1,47 @@
+.aurora-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+  filter: blur(80px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.aurora-blob {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  animation: floatAurora 15s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+  background: #3133a6;
+  top: -20%;
+  left: -10%;
+}
+
+.blob-2 {
+  background: #730a88;
+  bottom: -20%;
+  right: -10%;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  background: #b19cd9;
+  top: 30%;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+@keyframes floatAurora {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10vw, 15vh) scale(1.2); }
+  100% { transform: translate(-10vw, -10vh) scale(0.9); }
+}

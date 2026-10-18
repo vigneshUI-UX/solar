@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #03030c;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.scroll-container {
+  position: relative;
+  height: 400vh;
+}
+
+.sticky-viewport {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.canvas-sequence-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.frame-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-content {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+}
+.slide h1,
+.slide h2 {
+  font-size: clamp(2.5rem, 6vw, 3.8rem);
+  letter-spacing: 2px;
+  
+  /* 🌌 Vibrant multi-color cosmic starburst gradient */
+  background: linear-gradient(135deg, #ffffff 15%, #00f0ff 40%, #7928ca 75%, #ff007f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 25px rgba(108, 11, 164, 0.4));
+}
+.slide span {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  
+  /* 🌈 Multi-color gradient spanning cyan, neon blue, purple, and hot pink */
+  background: linear-gradient(135deg, #00f0ff 0%, #0042ff 35%, #b026ff 70%, #ff007f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+  
+  /* ✨ Glowing neon aura effect */
+  filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.5));
+}
+
+.overlay-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.scroll-container {
+  position: relative;
+  /* 1500vh for the sticky frame/planet journey + extra height for later content sections */
+  height: 3200vh; 
+}
+/* Slide Base Style with Smoother, Controlled Transition */
+.slide {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: transform, opacity;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
