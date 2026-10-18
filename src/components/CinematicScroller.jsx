@@ -23,7 +23,7 @@ export default function CinematicScroller() {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       const paddedIndex = String(i).padStart(3, '0');
-      img.src = `/frames/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `frames/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         loadedImages++;
         if (loadedImages === 1) {
